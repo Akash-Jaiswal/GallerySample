@@ -19,7 +19,7 @@ class GalleryViewController: UIViewController {
         didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
-            collectionView.register(UINib(nibName: ImageCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
+            collectionView.register(UINib(nibName: ImageCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: ImageCollectionViewCell.reuseID)
         }
     }
     
@@ -62,7 +62,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.nibName, for: indexPath) as! ImageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseID, for: indexPath) as! ImageCollectionViewCell
         cell.model = photoArray[indexPath.row]
         return cell
     }
