@@ -26,6 +26,7 @@ extension GalleryPresenter : IResponseHandler {
     }
     
     func didReceiveError(err: [APIErrorInfo]) {
+      viewController?.getPhotosFailure(error: err)
     }
     
 }
