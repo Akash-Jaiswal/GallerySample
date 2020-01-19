@@ -47,7 +47,7 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
         self.getPhotos()
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,6 +72,13 @@ extension GalleryViewController: UICollectionViewDataSource {
             loadNextPage()
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: PhotoViewController.reuseID) as! PhotoViewController
+        if let image = ((collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell)?.imageView.image) {
+            vc.photo = image
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     private func loadNextPage() {
         if pageNo < galleryModel.pages ?? 0 {
             pageNo += 1
@@ -80,7 +87,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
     func getPhotos(showloader: Bool = true) {
         if showloader == true {
-        self.navigationController?.view.activityStartAnimating()
+            self.navigationController?.view.activityStartAnimating()
         }
         interactor?.getPhotos(pageNo: pageNo)
     }
@@ -88,7 +95,6 @@ extension GalleryViewController: UICollectionViewDataSource {
 
 //MARK:- UICollectionViewDelegateFlowLayout
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.bounds.width - 20)/numberOfColumns, height: (collectionView.bounds.width - 20)/numberOfColumns)
     }
