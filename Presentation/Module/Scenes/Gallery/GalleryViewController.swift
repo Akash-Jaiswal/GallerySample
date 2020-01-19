@@ -9,7 +9,7 @@
 import UIKit
 protocol IGalleryViewable {
     func getPhotosSuccess(viewModel: GalleryPresnetationModel)
-    func getPhotosFailure(viewModel: GalleryPresnetationModel)
+    func getPhotosFailure(error: [APIErrorInfo])
 }
 class GalleryViewController: UIViewController {
     private var pageNo = 1
@@ -48,10 +48,8 @@ class GalleryViewController: UIViewController {
         self.getPhotos()
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 //MARK:- UICollectionViewDataSource
@@ -103,6 +101,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
+//MARK:- To get the API response
 extension GalleryViewController: IGalleryViewable {
     func getPhotosSuccess(viewModel: GalleryPresnetationModel) {
         self.view.activityStopAnimating()
@@ -112,8 +111,8 @@ extension GalleryViewController: IGalleryViewable {
         }
         collectionView.reloadData()
     }
-    
-    func getPhotosFailure(viewModel: GalleryPresnetationModel) {
+    func getPhotosFailure(error: [APIErrorInfo]) {
         self.view.activityStopAnimating()
+        self.alert(message: error.first?.message ?? "Something went wrong.")
     }
 }

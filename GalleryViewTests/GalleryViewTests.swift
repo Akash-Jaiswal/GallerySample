@@ -35,7 +35,7 @@ class GalleryViewTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    // Test Case to check API Success case
+    //MARK : - Test Case to check API Response and also Validating the Image URL
     func testAPISuccessAndValidateImageURL() {
         responseExpectation = expectation(description: "response")
         let provider = GalleryUseCaseProvider()
