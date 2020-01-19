@@ -14,3 +14,8 @@ Application is required to install the Almofire pod to execute the Code.
 pod install
 ```
 
+## ScreenShot 
+```
+Output
+```
+![Output](https://github.com/Akash-Jaiswal/GallerySample/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20Xʀ%20-%202020-01-19%20at%2023.13.50.png)
