@@ -16,6 +16,12 @@ pod install
 
 ## ScreenShot 
 ```
-Output
+Galler View
 ```
-![Output](https://github.com/Akash-Jaiswal/GallerySample/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20Xʀ%20-%202020-01-19%20at%2023.13.50.png)
+![Gallery](https://github.com/Akash-Jaiswal/GallerySample/blob/master/ScreenShot/Screen-1.png)
+
+```
+Photo View
+```
+![Photo](https://github.com/Akash-Jaiswal/GallerySample/blob/develop/ScreenShot/Screen-3.png)
+
