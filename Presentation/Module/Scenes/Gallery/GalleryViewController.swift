@@ -87,7 +87,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
     func getPhotos(showloader: Bool = true) {
         if showloader == true {
-            self.navigationController?.view.activityStartAnimating()
+            self.view.activityStartAnimating()
         }
         interactor?.getPhotos(pageNo: pageNo)
     }
@@ -96,7 +96,7 @@ extension GalleryViewController: UICollectionViewDataSource {
 //MARK:- UICollectionViewDelegateFlowLayout
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width - 20)/numberOfColumns, height: (collectionView.bounds.width - 20)/numberOfColumns)
+        return CGSize(width: (collectionView.bounds.width - 10)/numberOfColumns, height: (collectionView.bounds.width - 20)/numberOfColumns)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -105,7 +105,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 }
 extension GalleryViewController: IGalleryViewable {
     func getPhotosSuccess(viewModel: GalleryPresnetationModel) {
-        self.navigationController?.view.activityStopAnimating()
+        self.view.activityStopAnimating()
         galleryModel = viewModel
         if let photos = viewModel.photos {
             photoArray.append(contentsOf: photos)
@@ -114,6 +114,6 @@ extension GalleryViewController: IGalleryViewable {
     }
     
     func getPhotosFailure(viewModel: GalleryPresnetationModel) {
-        self.navigationController?.view.activityStopAnimating()
+        self.view.activityStopAnimating()
     }
 }

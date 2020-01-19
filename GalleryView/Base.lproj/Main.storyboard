@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="794" y="36"/>
         </scene>
-        <!--Photo View Controller-->
+        <!--Photo-->
         <scene sceneID="LW2-Bn-dCL">
             <objects>
-                <viewController storyboardIdentifier="PhotoViewController" id="x68-db-G9O" customClass="PhotoViewController" customModule="GalleryView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" title="Photo" id="x68-db-G9O" customClass="PhotoViewController" customModule="GalleryView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfL-G6-fxO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
