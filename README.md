@@ -23,5 +23,5 @@ Galler View
 ```
 Photo View
 ```
-![Photo](https://github.com/Akash-Jaiswal/GallerySample/blob/develop/ScreenShot/Screen-3.png)
+![Photo](https://github.com/Akash-Jaiswal/GallerySample/blob/master/ScreenShot/Screen-3.png)
 
