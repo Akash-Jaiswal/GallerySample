@@ -1,5 +1,5 @@
 # GallerySample
-It's just a simple Application to see the Images in Gallery View format. 
+Simple Application to see the Images in Gallery View format. 
 
 ## Description
 1.Gallery sample is using Flickr public API to download the Image content. <br/>
